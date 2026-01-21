@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CombustionCarApp</string>
+    <string name="title">Combustion Car</string>
+    <string name="carros">Carros</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="preco">Preço</string>
+    <string name="tanque">Tanque</string>
+    <string name="potencia">Potencia</string>
+    <string name="aceleracao">Aceleração</string>
+    <string name="preco_combustivel">Preço Combustivel</string>
+    <string name="km_percorrido">KM Percorrido</string>
+    <string name="btn_calcular">CALCULAR</string>
+    <string name="calcular_autonomia">Calcular Autonomia</string>
+</resources>
