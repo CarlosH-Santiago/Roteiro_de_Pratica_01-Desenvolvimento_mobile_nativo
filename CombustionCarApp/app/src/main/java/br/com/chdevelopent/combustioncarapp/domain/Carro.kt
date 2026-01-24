@@ -6,7 +6,8 @@ class Carro (
     val tanque : String,
     val potencia: String,
     val aceleracao: String,
-    val urlPhoto:  String
+    val urlPhoto:  String,
+    var isFavorite: Boolean
 ){
 
 }

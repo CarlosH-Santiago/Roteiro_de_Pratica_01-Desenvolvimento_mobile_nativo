@@ -1,5 +1,6 @@
 package br.com.chdevelopent.combustioncarapp.ui
 
+
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -17,6 +18,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.com.chdevelopent.combustioncarapp.R
 import br.com.chdevelopent.combustioncarapp.data.CarsApi
+import br.com.chdevelopent.combustioncarapp.data.local.CarRepository
 import br.com.chdevelopent.combustioncarapp.domain.Carro
 import br.com.chdevelopent.combustioncarapp.ui.adapter.CarAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -80,7 +82,7 @@ class CarFragment : Fragment() {
                     response.body()?.let {
                         carrosArray.clear()
                         carrosArray.addAll(it)
-                        setupList()
+                        setupList(carrosArray)
                     }
                 } else {
                     progressBar.visibility = View.GONE
@@ -114,11 +116,15 @@ class CarFragment : Fragment() {
         }
     }
 
-    fun setupList() {
-        val carAdapter = CarAdapter(carrosArray)
+    fun setupList(lista: List<Carro>) {
+        val carAdapter = CarAdapter(lista)
         listaCarros.apply {
             visibility = View.VISIBLE
             adapter = carAdapter
+        }
+
+        carAdapter.carItemLister = { carro ->
+            val isSaved = CarRepository(requireContext()).saveIfNotExists(carro)
         }
     }
 
@@ -153,8 +159,4 @@ class CarFragment : Fragment() {
             return networkInfo.isConnected
         }
     }
-
-    // A classe MyTask (AsyncTask) foi removida pois o Retrofit já faz o trabalho
-    // em segundo plano de forma mais eficiente.
-
 }

@@ -12,5 +12,6 @@
     <string name="btn_calcular">CALCULAR</string>
     <string name="calcular_autonomia">Calcular Autonomia</string>
     <string name="botao_para_calcular_autonomia">Botão para Calcular Autonômia</string>
+    <string name="saved_calc">savedCalc</string>
     <string name="no_signal_txt">Sem Acesso a Internet ):</string>
 </resources>

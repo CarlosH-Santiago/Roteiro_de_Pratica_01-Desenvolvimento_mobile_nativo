@@ -12,6 +12,7 @@ object CarFactory {
             potencia = "220cv",
             aceleracao = "0-100: 3,5s",
             urlPhoto = "www.google.com.br",
+            isFavorite = false
         )
     )
 }
