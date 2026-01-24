@@ -28,8 +28,8 @@ class CalcularAutonomiaActivity : AppCompatActivity() {
          preco = findViewById(R.id.et_preco_combustivel)
          kmPercorrido = findViewById(R.id.et_km_percorrido)
          resultado = findViewById(R.id.tv_resultado)
-        btnCalcular = findViewById(R.id.btn_calcular)
-        btnBackward = findViewById(R.id.iv_backward)
+         btnCalcular = findViewById(R.id.btn_calcular)
+         btnBackward = findViewById(R.id.iv_backward)
     }
 
     fun setupListeners() {
@@ -49,6 +49,8 @@ class CalcularAutonomiaActivity : AppCompatActivity() {
 
             resultado.text = result.toString()
     }
+
+
 
 
 }
